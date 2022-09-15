@@ -1,0 +1,56 @@
+<form class="form-group col-sm-3 col-md-3 form border-light " [formGroup]="miFormulario" >
+
+  <h1 class="p-1  text-light text-center">Registrarse</h1>
+
+  <div class="mb-3 row">
+
+    <div class="col-sm-12 inputs row">
+      <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre completo">
+      <span class="form-text text-danger" *ngIf="campoEsValido('nombre')">
+        Este campo es obligatorio
+      </span>
+    </div>
+
+    <div class="col-sm-12 inputs row">
+      <input type="number" class="form-control" formControlName="edad" placeholder="Edad de la persona">
+      <span class="form-text text-danger" *ngIf="campoEsValido('edad')">
+        Este campo es obligatorio
+      </span>
+      <span class="form-text text-danger" *ngIf="edad < 18 && edad">
+        Tiene que ser mayor de 18
+      </span>
+    </div>
+
+    <div class="col-sm-12 inputs row">
+      <input type="date" class="form-control" formControlName="nacimiento" placeholder="Fecha nacimiento">
+      <span class="form-text text-danger" *ngIf="campoEsValido('nacimiento')">
+        Este campo es obligatorio
+      </span>
+    </div>
+
+
+    <div class="col-sm-12 inputs row">
+      <input type="date" class="form-control" formControlName="inscripcion" placeholder="Fecha inscripcion">
+      <span class="form-text text-danger" *ngIf="campoEsValido('inscripcion')">
+        Este campo es obligatorio
+      </span>
+    </div>
+
+
+    <div class="col-sm-12 inputs row">
+      <input type="number" class="form-control" formControlName="costo" placeholder="Costo de la inscripcion">
+      <span class="form-text text-danger" *ngIf="campoEsValido('costo')">
+        Este campo es obligatorio
+      </span>
+    </div>
+
+    <div class="col-sm-12 ">
+      <button type="button"
+              class="btn btn-primary float-end pt-2"
+
+              btn-lg btn-block
+              (click)="agregar()">Agregar</button>
+    </div>
+
+  </div>
+</form>
